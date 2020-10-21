@@ -1,0 +1,25 @@
+name: '5 min deploy'
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+      
+
+
+jobs:
+  auto-deploy-trigger:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+
+    - name: merge master into production
+      uses: robotology/gh-action-nightly-merge@v1.3.1
+      with:
+        stable_branch: 'master'
+        development_branch: 'production'
+        allow_ff: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
