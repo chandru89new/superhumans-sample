@@ -9,4 +9,4 @@ jobs:
     - name: Call deploy hook
       uses: wei/curl@v1
       with:
-        args: -X POST https://api.vercel.com/v1/integrations/deploy/QmPCJHVN113SVZ7H2zkXkDaV7kBh3hfV4KL2rTr6dpgdCX/8SOdB6Zo3f
+        args: -X POST https://api.vercel.com/v1/integrations/deploy/QmPCJHVN113SVZ7H2zkXkDaV7kBh3hfV4KL2rTr6dpgdCX/pkT60aMkFJ
